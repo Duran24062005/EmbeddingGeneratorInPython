@@ -5,6 +5,7 @@ description = "Ejemplo básico de embeddings con OpenAI y uv"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "google-genai>=2.33.0",
     "openai>=3.37.0",
     "python-dotenv>=1.2.4",
 ]
