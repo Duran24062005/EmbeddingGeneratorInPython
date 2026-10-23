@@ -80,7 +80,26 @@ DeepSeek no se usa aquí para generar embeddings: su API oficial documenta
 `/chat/completions`, mientras que el embedding del proyecto sigue siendo el de
 OpenAI. Así se evita presentar como equivalentes dos capacidades distintas.
 
-## 4. Qué devuelve la API de OpenAI
+## 4. Ejecutar Gemini
+
+El ejemplo `gemini.py` genera un embedding mediante el SDK oficial
+`google-genai`. Agrega tu clave de Google AI Studio a `.env` usando
+`GEMINI_API_KEY` (también se acepta `GOOGLE_API_KEY`):
+
+```dotenv
+GEMINI_API_KEY=tu_clave_de_gemini_aqui
+```
+
+Después ejecuta:
+
+```bash
+uv run gemini.py
+```
+
+El script carga `.env` explícitamente y nunca requiere guardar la clave en el
+código. `GOOGLE_API_KEY` tiene prioridad si ambas variables están definidas.
+
+## 5. Qué devuelve la API de OpenAI
 
 La llamada importante está en `main.py`:
 
@@ -102,7 +121,7 @@ reproducir ese identificador de forma explícita, cambia la constante `MODEL`
 en `main.py` por `"text-embedding-ada-002"`. El modelo de este proyecto es
 `text-embedding-3-small`, cuyo vector predeterminado tiene 1536 dimensiones.
 
-## 5. Ejecutar las pruebas
+## 6. Ejecutar las pruebas
 
 La prueba usa un cliente falso: valida la llamada y no consume créditos ni
 necesita una clave real.
