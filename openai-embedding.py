@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="sk-of-RSBYKmUJhCuOEkPKqeiXPYYmTOCXclliGFYQkSbyaQYAVHptnlIKFMbCByoxFoNA",
+    api_key="apikey",
     base_url="https://api.ofox.ai/v1",
 )
 
